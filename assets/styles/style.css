@@ -1,0 +1,228 @@
+body, ul, li{
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, p, span, li{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1, h3{
+    color: white;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+.wrapper{
+    height: 100%;
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+
+.nav{
+    position: fixed;
+    height: 75px;
+    width: 100vw;
+    color: white;
+    z-index: 100;
+}
+
+.nav__logo{
+    display: flex;
+}
+.nav__logo-burger_parent{
+    cursor: pointer;
+}
+.nav__logo-burger_child{
+    position: relative;
+    width: 30px;
+    height: 2.5px;
+    border-radius: 2em;
+    margin-right: 50px;
+    user-select: none;
+    background-color: white;
+}
+.nav__logo-burger_child::before{
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: 5px;
+    display: block;
+    width: 20px;
+    height: 2.5px;
+    border-radius: 2em;
+    background-color: white;
+}
+.nav__logo-burger_child::after{
+    content: '';
+    position: absolute;
+    top: 22px;
+    display: block;
+    width: 30px;
+    height: 2.5px;
+    border-radius: 2em;
+    background-color: white;
+}
+
+.nav__list-item{
+    display: inline-block;
+    margin-right: 50px;
+}
+.nav__list-item:last-child{
+    margin-right: 0px;
+}
+.nav__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.main{
+    height: 100vh;
+    background: black;
+}
+.main__wrapper{
+    position: relative;
+    display: grid;
+    grid-template-rows: 70% 30%;
+    z-index: 1;
+}
+.main__background{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 70vw;
+    background: linear-gradient(174deg, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.9)), top center / auto 100% no-repeat url(../img/mountain_1.jpg);
+    z-index: 0;
+}
+
+.main__header{
+    padding-top: 15%;
+}
+.main__header-title{
+    font-size: 125px;
+}
+.main__header-text{
+    font-size: 18px;
+    color: white;
+}
+.main__header-text, .main__more{
+    width: 20vw;
+}
+
+.main__list{
+    display: flex;
+}
+
+.main__more{
+    margin-right: 10vw;
+}
+.main__more-button{
+    -webkit-appearance: none;
+            appearance: none;
+    font-size: 18px;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    margin-bottom: 25%;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: orangered;
+    background: transparent;
+}
+.main__more-text{
+    color: gray;
+}
+
+.main__mountains{
+    position: relative;
+    width: 100%;
+}
+.main__mountains, .mountains__list{
+    display: flex;
+}
+.mountains__list{
+    width: 95%;
+    justify-content: space-around;
+}
+.mountains__list-item{
+    height: clamp(100px, 70%, 300px);
+    width: clamp(200px, 80%, 400px);
+    margin-right: 15px;
+    cursor: pointer;
+}
+.mountains__list-item:last-child{
+    margin-right: 0;
+}
+.mountain__img{
+    height: 100%;
+    width: 100%;
+    margin-bottom: 25px;
+    object-fit: cover;
+}
+
+.mountains__controls{
+    position: absolute;
+    top: 35%;
+    right: 0;
+    -webkit-appearance: none;
+            appearance: none;
+    height: 40px;
+    width: 40px;
+    border: 0;
+    border-radius: 50%;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    transform: translateY(-50%);
+    background: white;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .mountains__list-item:nth-child(3){
+        display: none;
+    }
+}
+@media screen and (max-width: 765px) {
+    .nav__list{
+        display: none;
+    }
+    .nav__wrapper{
+        justify-content: center;
+    }
+
+    .main__wrapper{
+        grid-template-rows: 50% 50%;
+    }
+    .main__header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .main__header-title{
+        font-size: 12vw;
+        text-align: center;
+    }
+    .main__header-text, .main__more {
+        width: auto;
+        text-align: center;
+    }
+    .main__list{
+        flex-direction: column;
+    }
+    .main__more{
+        margin-bottom: 5px;
+    }
+    .main__more-button{
+        margin-bottom: 5%;
+    }
+
+    .mountains__list-item:nth-child(2){
+        display: none;
+    }
+}
